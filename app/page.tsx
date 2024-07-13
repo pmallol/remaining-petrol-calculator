@@ -24,6 +24,8 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     fetchStations();
+    const interval = setInterval(fetchStations, 30000); // Fetch new prices every 30 seconds
+    return () => clearInterval(interval);
   }, []);
 
   return (
