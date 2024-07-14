@@ -43,7 +43,10 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mx-auto p-6 min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600 mb-8">Gasazon</h1>
+      <header className='mb-8 border-b border-b-blue-700'>
+        <h1 className="text-4xl font-bold text-blue-600 mb-2">Gasazon</h1>
+        <h3 className='text-md text-gray-800 mb-4'>Calculate liters and find best prices every 30s. Simplify your petrol purchase with precision.</h3>
+      </header>
       <div className="mb-6">
         <label className="block text-lg font-medium text-gray-700 mb-2">Enter the desired amount of petrol liters you would like to buy:</label>
         <input
@@ -51,7 +54,7 @@ const Home: React.FC = () => {
           value={liters}
           onChange={(e) => setLiters(Number(e.target.value))}
           min="1"
-          className="mt-1 p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
       <div className="mb-8 p-6 bg-white rounded-lg shadow-md">
