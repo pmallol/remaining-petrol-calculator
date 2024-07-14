@@ -31,36 +31,38 @@ const StationList: React.FC<Props> = ({ stations, liters }) => {
   const minTotal = Math.min(...totals);
 
   return (
-    <table className="min-w-full table-auto">
-      <thead>
-        <tr>
-          <th className="border px-4 py-2">Petrol Station</th>
-          <th className="border px-4 py-2">1L</th>
-          <th className="border px-4 py-2">3L</th>
-          <th className="border px-4 py-2">5L</th>
-          <th className="border px-4 py-2">15L</th>
-          <th className="border px-4 py-2">Total (€)</th>
-        </tr>
-      </thead>
-      <tbody>
-        {stations.map((station, index) => {
-          const total = totals[index];
-          return (
-            <tr
-              key={index}
-              className={total === minTotal ? 'bg-blue-100' : ''}
-            >
-              <td className="border px-4 py-2 font-medium text-gray-700">{station.name}</td>
-              <td className="border px-4 py-2">{station.prices["1L"].toFixed(2)}</td>
-              <td className="border px-4 py-2">{station.prices["3L"].toFixed(2)}</td>
-              <td className="border px-4 py-2">{station.prices["5L"].toFixed(2)}</td>
-              <td className="border px-4 py-2">{station.prices["15L"].toFixed(2)}</td>
-              <td className="border px-4 py-2">€{total.toFixed(2)}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className='overflow-x-auto'>
+      <table className="min-w-full bg-white border border-gray-200 divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr className="text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th className="px-6 py-3">Petrol Station</th>
+            <th className="px-6 py-3">1L</th>
+            <th className="px-6 py-3">3L</th>
+            <th className="px-6 py-3">5L</th>
+            <th className="px-6 py-3">15L</th>
+            <th className="px-6 py-3">Total (€)</th>
+          </tr>
+        </thead>
+        <tbody className='divide-y divide-gray-200'>
+          {stations.map((station, index) => {
+            const total = totals[index];
+            return (
+              <tr
+                key={index}
+                className={total === minTotal ? 'bg-blue-100' : ''}
+              >
+                <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-700">{station.name}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{station.prices["1L"].toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{station.prices["3L"].toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{station.prices["5L"].toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap">{station.prices["15L"].toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap">€{total.toFixed(2)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
