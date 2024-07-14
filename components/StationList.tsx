@@ -27,19 +27,19 @@ const StationList: React.FC<Props> = ({ stations, liters }) => {
     bottles[15] * station.prices["15L"]
   ));
 
-  // Find the minimum total to hightlight the cheapest station
+  // Find the minimum total to highlight the cheapest station
   const minTotal = Math.min(...totals);
 
   return (
     <table className="min-w-full table-auto">
       <thead>
         <tr>
-          <th>Petrol Station</th>
-          <th>1L</th>
-          <th>3L</th>
-          <th>5L</th>
-          <th>15L</th>
-          <th>Total (€)</th>
+          <th className="border px-4 py-2">Petrol Station</th>
+          <th className="border px-4 py-2">1L</th>
+          <th className="border px-4 py-2">3L</th>
+          <th className="border px-4 py-2">5L</th>
+          <th className="border px-4 py-2">15L</th>
+          <th className="border px-4 py-2">Total (€)</th>
         </tr>
       </thead>
       <tbody>
@@ -50,12 +50,12 @@ const StationList: React.FC<Props> = ({ stations, liters }) => {
               key={index}
               className={total === minTotal ? 'bg-blue-100' : ''}
             >
-              <td>{station.name}</td>
-              <td>{station.prices["1L"].toFixed(2)}</td>
-              <td>{station.prices["3L"].toFixed(2)}</td>
-              <td>{station.prices["5L"].toFixed(2)}</td>
-              <td>{station.prices["15L"].toFixed(2)}</td>
-              <td>{total.toFixed(2)}</td>
+              <td className="border px-4 py-2 font-medium text-gray-700">{station.name}</td>
+              <td className="border px-4 py-2">{station.prices["1L"].toFixed(2)}</td>
+              <td className="border px-4 py-2">{station.prices["3L"].toFixed(2)}</td>
+              <td className="border px-4 py-2">{station.prices["5L"].toFixed(2)}</td>
+              <td className="border px-4 py-2">{station.prices["15L"].toFixed(2)}</td>
+              <td className="border px-4 py-2">€{total.toFixed(2)}</td>
             </tr>
           );
         })}
