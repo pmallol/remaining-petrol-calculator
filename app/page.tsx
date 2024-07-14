@@ -42,33 +42,33 @@ const Home: React.FC = () => {
   const bottles = calculateBottles(liters);
 
   return (
-    <div className="container mx-auto p-6 min-h-screen bg-gray-100">
-      <header className='mb-8 border-b border-b-blue-700'>
-        <h1 className="text-4xl font-bold text-blue-600 mb-2">Gasazon</h1>
-        <h3 className='text-md text-gray-800 mb-4'>Calculate liters and find best prices every 30s. Simplify your petrol purchase with precision.</h3>
+    <div className="container mx-auto p-4 sm:p-6 min-h-screen bg-gray-100">
+      <header className="mb-6 sm:mb-8 border-b border-blue-700">
+        <h1 className="text-2xl sm:text-4xl font-bold text-blue-600 mb-2">Gasazon</h1>
+        <h3 className="text-sm sm:text-md text-gray-800 mb-4">Calculate liters and find best prices every 30s. Simplify your petrol purchase with precision.</h3>
       </header>
-      <div className="mb-6">
-        <label className="block text-lg font-medium text-gray-700 mb-2">Enter the desired amount of petrol liters you would like to buy:</label>
+      <div className="mb-4 sm:mb-6">
+        <label className="block text-md sm:text-lg font-medium text-gray-700 mb-2">Enter the desired amount of petrol liters you would like to buy:</label>
         <input
           type="number"
           value={liters}
           onChange={(e) => setLiters(Number(e.target.value))}
           min="1"
-          className="mt-1 p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="mt-1 p-2 sm:p-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
-      <div className="mb-8 p-6 bg-white rounded-lg shadow-md">
-        <p className='mb-4 text-lg'>You want to buy a total of <b>{liters}L</b> of petrol.</p>
-        <p className="text-md mb-2">For which you will need to purchase the following amount of bottles:</p>
+      <div className="mb-6 sm:mb-8 p-4 sm:p-6 bg-white rounded-lg shadow-md">
+        <p className="mb-4 text-md sm:text-lg">You want to buy a total of <b>{liters}L</b> of petrol.</p>
+        <p className="text-sm sm:text-md mb-2">For which you will need to purchase the following amount of bottles:</p>
         <ol className="list-disc list-inside pl-5">
           {Object.entries(bottles).map(([key, value]) => (
-            <li key={key} className="text-md">
+            <li key={key} className="text-sm sm:text-md">
               {value} unit{value === 1 ? '' : 's'} of {key} liter{key === '1' ? '' : 's'}
             </li>
           ))}
         </ol>
       </div>
-      <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="bg-white p-4 sm:p-6 rounded-lg shadow-md">
         <StationList stations={stations} liters={liters} />
       </div>
       <Footer />
