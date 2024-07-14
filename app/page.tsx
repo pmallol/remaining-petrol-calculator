@@ -18,7 +18,7 @@ interface Station {
 
 const Home: React.FC = () => {
   const [stations, setStations] = useState<Station[]>([]);
-  const [liters, setLiters] = useState<number>(0);
+  const [liters, setLiters] = useState<number>(1);
 
   const fetchStations = async () => {
     const res = await fetch('/api/stations');
@@ -38,13 +38,13 @@ const bottles = calculateBottles(liters);
     <div className="container mx-auto p-4 h-dvh">
       <h1 className="text-2xl font-bold mb-4">Gasazon</h1>
       <div className="mb-4">
-        <label className="block text-md font-medium text-gray-700">Enter desired amount of petrol liters:</label>
+        <label className="block text-md font-medium text-gray-700">Enter the desired amount of petrol liters you would like to buy:</label>
         <input
           type="number"
           value={liters}
           onChange={(e) => setLiters(Number(e.target.value))}
-          min="0"
-          className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+          min="1"
+          className="mt-1 p-2 block border-gray-300 rounded-md shadow-sm"
         />
       </div>
       <div className="mb-10">
