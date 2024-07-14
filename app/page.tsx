@@ -48,8 +48,17 @@ const bottles = calculateBottles(liters);
         />
       </div>
       <div className="mb-10">
-        <h3>You want to buy <b>{liters}L</b> of petrol.</h3>
-        <p>{JSON.stringify(bottles)}</p>
+        <p className='mb-4'>You want to buy a total of <b>{liters}L</b> of petrol.</p>
+        <p>For which you will need to purchase the following amount of bottles:</p>
+        <p>
+          <ol className="list-disc list-inside">
+            {Object.entries(bottles).map(([key, value]) => (
+              <li key={key}>
+                {value} unit{ value === 1 ? '': 's'} of {key} liter{ key === '1' ? '': 's'}
+              </li>
+            ))}
+          </ol>
+        </p>
       </div>
       <StationList stations={stations} liters={liters} />
     </div>
