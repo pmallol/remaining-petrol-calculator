@@ -50,15 +50,13 @@ const bottles = calculateBottles(liters);
       <div className="mb-10">
         <p className='mb-4'>You want to buy a total of <b>{liters}L</b> of petrol.</p>
         <p>For which you will need to purchase the following amount of bottles:</p>
-        <p>
-          <ol className="list-disc list-inside">
-            {Object.entries(bottles).map(([key, value]) => (
-              <li key={key}>
-                {value} unit{ value === 1 ? '': 's'} of {key} liter{ key === '1' ? '': 's'}
-              </li>
-            ))}
-          </ol>
-        </p>
+        <ol className="list-disc list-inside">
+          {Object.entries(bottles).map(([key, value]) => (
+            <li key={key}>
+              {value} unit{ value === 1 ? '': 's'} of {key} liter{ key === '1' ? '': 's'}
+            </li>
+          ))}
+        </ol>
       </div>
       <StationList stations={stations} liters={liters} />
     </div>
