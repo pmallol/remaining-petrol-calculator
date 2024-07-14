@@ -1,3 +1,23 @@
+# Gasazon - Onum technical test
+
+Gasazon is a web application designed to simplify the process of buying petrol in the year 2050, where resources are scarce. The app allows users to calculate the amount of petrol liters they need to buy and find the best prices from various petrol stations. Prices are updated dynamically every 30 seconds.
+
+## Features
+
+- **Calculate Petrol Liters:** Enter the desired amount of petrol liters and get the optimal number of bottles to purchase.
+- **Real-Time Price Updates:** Prices from petrol stations are fetched and updated every 30 seconds.
+- **Station Comparison:** View and compare prices from up to 10 different petrol stations.
+- **Responsive Design:** Designed to work seamlessly on desktop and mobile devices.
+
+## Technologies Used
+
+- **Next.js:** React framework for server-rendered React applications.
+- **React.js:** JavaScript library for building user interfaces.
+- **TypeScript:** Typed superset of JavaScript for improved developer productivity.
+- **TailwindCSS:** Utility-first CSS framework for quickly building custom designs.
+- **API Integration:** Fetches petrol station data using RESTful APIs in Next.js.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
