@@ -15,6 +15,14 @@ interface Station {
   };
 }
 
+const Footer: React.FC = () => {
+  return (
+    <footer className="text-center text-sm text-gray-600 mt-8">
+      &copy; 2050 Gasazon
+    </footer>
+  );
+};
+
 const Home: React.FC = () => {
   const [stations, setStations] = useState<Station[]>([]);
   const [liters, setLiters] = useState<number>(1);
@@ -60,6 +68,7 @@ const Home: React.FC = () => {
       <div className="bg-white p-6 rounded-lg shadow-md">
         <StationList stations={stations} liters={liters} />
       </div>
+      <Footer />
     </div>
   );
 };
