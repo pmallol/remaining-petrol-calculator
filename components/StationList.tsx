@@ -1,3 +1,5 @@
+import { calculateBottles } from '../utils/calculateBottles';
+
 interface Station {
   name: string;
   prices: {
@@ -12,18 +14,6 @@ interface Props {
   stations: Station[];
   liters: number;
 }
-
-const calculateBottles = (liters: number) => {
-  const sizes = [15, 5, 3, 1];
-  const result: { [key: string]: number } = {};
-
-  sizes.forEach(size => {
-    result[size] = Math.floor(liters / size);
-    liters %= size;
-  });
-
-  return result;
-};
 
 const StationList: React.FC<Props> = ({ stations, liters }) => {
   const bottles = calculateBottles(liters);

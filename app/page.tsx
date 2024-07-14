@@ -1,6 +1,9 @@
 "use client"
 
 import { useState, useEffect } from 'react';
+
+import { calculateBottles } from '../utils/calculateBottles';
+
 import StationList from '../components/StationList';
 
 interface Station {
@@ -29,6 +32,8 @@ const Home: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+const bottles = calculateBottles(liters);
+
   return (
     <div className="container mx-auto p-4 h-dvh">
       <h1 className="text-2xl font-bold mb-4">Gasazon</h1>
@@ -41,6 +46,10 @@ const Home: React.FC = () => {
           min="0"
           className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
         />
+      </div>
+      <div className="mb-10">
+        <h3>You want to buy <b>{liters}L</b> of petrol.</h3>
+        <p>{JSON.stringify(bottles)}</p>
       </div>
       <StationList stations={stations} liters={liters} />
     </div>
