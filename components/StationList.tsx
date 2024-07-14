@@ -1,3 +1,4 @@
+import React from 'react';
 import { calculateBottles } from '../utils/calculateBottles';
 
 interface Station {
@@ -18,6 +19,17 @@ interface Props {
 const StationList: React.FC<Props> = ({ stations, liters }) => {
   const bottles = calculateBottles(liters);
 
+  // Calculate totals for each station
+  const totals = stations.map(station => (
+    bottles[1] * station.prices["1L"] +
+    bottles[3] * station.prices["3L"] +
+    bottles[5] * station.prices["5L"] +
+    bottles[15] * station.prices["15L"]
+  ));
+
+  // Find the minimum total to hightlight the cheapest station
+  const minTotal = Math.min(...totals);
+
   return (
     <table className="min-w-full table-auto">
       <thead>
@@ -32,10 +44,12 @@ const StationList: React.FC<Props> = ({ stations, liters }) => {
       </thead>
       <tbody>
         {stations.map((station, index) => {
-          const total = bottles[1] * station.prices["1L"] + bottles[3] * station.prices["3L"] +
-                        bottles[5] * station.prices["5L"] + bottles[15] * station.prices["15L"];
+          const total = totals[index];
           return (
-            <tr key={index}>
+            <tr
+              key={index}
+              className={total === minTotal ? 'bg-blue-100' : ''}
+            >
               <td>{station.name}</td>
               <td>{station.prices["1L"].toFixed(2)}</td>
               <td>{station.prices["3L"].toFixed(2)}</td>
@@ -51,4 +65,3 @@ const StationList: React.FC<Props> = ({ stations, liters }) => {
 };
 
 export default StationList;
-
