@@ -8,6 +8,8 @@ Gasazon is a web application designed to simplify the process of buying petrol i
 - **Real-Time Price Updates:** Prices from petrol stations are fetched and updated every 30 seconds.
 - **Station Comparison:** View and compare prices from up to 10 different petrol stations.
 - **Responsive Design:** Designed to work seamlessly on desktop and mobile devices.
+- **Unit Tests:** Comprehensive unit tests are included to ensure the functionality and reliability of the application.
+
 
 ## Technologies Used
 
@@ -16,7 +18,7 @@ Gasazon is a web application designed to simplify the process of buying petrol i
 - **TypeScript:** Typed superset of JavaScript for improved developer productivity.
 - **TailwindCSS:** Utility-first CSS framework for quickly building custom designs.
 - **API Integration:** Fetches petrol station data using RESTful APIs in Next.js.
-
+- **Jest:** JavaScript testing framework for unit testing and code coverage analysis.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
