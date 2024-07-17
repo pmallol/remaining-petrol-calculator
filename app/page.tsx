@@ -48,8 +48,9 @@ const Home: React.FC = () => {
         <h3 className="text-sm sm:text-md text-gray-800 mb-4">Calculate liters and find best prices every 30s. Simplify your petrol purchase with precision.</h3>
       </header>
       <div className="mb-4 sm:mb-6">
-        <label className="block text-md sm:text-lg font-medium text-gray-700 mb-2">Enter the desired amount of petrol liters you would like to buy:</label>
+        <label htmlFor="input-liters" className="block text-md sm:text-lg font-medium text-gray-700 mb-2">Enter the desired amount of petrol liters you would like to buy:</label>
         <input
+          id="input-liters"
           type="number"
           value={liters}
           onChange={(e) => setLiters(Number(e.target.value))}
