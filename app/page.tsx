@@ -54,15 +54,15 @@ const Home: React.FC = () => {
           value={liters}
           onChange={(e) => setLiters(Number(e.target.value))}
           min="1"
-          className="mt-1 p-2 sm:p-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          className="mt-1 p-2 sm:p-3 border border-gray-300 text-black rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
       <div className="mb-6 sm:mb-8 p-4 sm:p-6 bg-white rounded-lg shadow-md">
-        <p className="mb-4 text-md sm:text-lg">You want to buy a total of <b>{liters}L</b> of petrol.</p>
-        <p className="text-sm sm:text-md mb-2">For which you will need to purchase the following amount of bottles:</p>
-        <ol className="list-disc list-inside pl-5">
+        <p className="mb-4 text-md sm:text-lg text-black">You want to buy a total of <b>{liters}L</b> of petrol.</p>
+        <p className="text-sm sm:text-md text-black mb-2">For which you will need to purchase the following amount of bottles:</p>
+        <ol className="list-disc list-inside text-black pl-5">
           {Object.entries(bottles).map(([key, value]) => (
-            <li key={key} className="text-sm sm:text-md">
+            <li key={key} className="text-sm sm:text-md text-black">
               {value} unit{value === 1 ? '' : 's'} of {key} liter{key === '1' ? '' : 's'}
             </li>
           ))}

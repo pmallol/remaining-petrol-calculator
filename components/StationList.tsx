@@ -52,11 +52,11 @@ const StationList: React.FC<Props> = ({ stations, liters }) => {
                 className={total === minTotal ? 'bg-blue-100' : ''}
               >
                 <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-700">{station.name}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{station.prices["1L"].toFixed(2)}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{station.prices["3L"].toFixed(2)}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{station.prices["5L"].toFixed(2)}</td>
-                <td className="px-6 py-4 whitespace-nowrap">{station.prices["15L"].toFixed(2)}</td>
-                <td className="px-6 py-4 whitespace-nowrap">€{total.toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-black">{station.prices["1L"].toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-black">{station.prices["3L"].toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-black">{station.prices["5L"].toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-black">{station.prices["15L"].toFixed(2)}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-black">€{total.toFixed(2)}</td>
               </tr>
             );
           })}
