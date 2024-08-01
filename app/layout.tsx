@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gasazon",
+  title: "RemPetrol",
   description: "Easily calculate the amount of petrol you need to buy and find the best prices from various petrol stations.",
 };
 

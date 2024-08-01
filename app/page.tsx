@@ -18,7 +18,7 @@ interface Station {
 const Footer: React.FC = () => {
   return (
     <footer className="text-center text-sm text-gray-600 mt-8">
-      &copy; 2050 Gasazon
+      &copy; 2050 RemPetrol
     </footer>
   );
 };
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
   return (
     <div className="container mx-auto p-4 sm:p-6 min-h-screen bg-gray-100">
       <header className="mb-6 sm:mb-8 border-b border-blue-700">
-        <h1 className="text-2xl sm:text-4xl font-bold text-blue-600 mb-2">Gasazon</h1>
+        <h1 className="text-2xl sm:text-4xl font-bold text-blue-600 mb-2">RemPetrol</h1>
         <h3 className="text-sm sm:text-md text-gray-800 mb-4">Calculate liters and find best prices every 30s. Simplify your petrol purchase with precision.</h3>
       </header>
       <div className="mb-4 sm:mb-6">
