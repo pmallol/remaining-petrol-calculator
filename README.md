@@ -1,6 +1,8 @@
-# Gasazon - Onum technical test
+# RemPetrol
 
-Gasazon is a web application designed to simplify the process of buying petrol in the year 2050, where resources are scarce. The app allows users to calculate the amount of petrol liters they need to buy and find the best prices from various petrol stations. Prices are updated dynamically every 30 seconds.
+RemPetrol is a web application designed to simplify the process of buying petrol in the year 2050, where resources are scarce. The app allows users to calculate the amount of petrol liters they need to buy and find the best prices from various petrol stations. Prices are updated dynamically every 30 seconds.
+
+<img width="1241" alt="Screenshot 2024-08-01 at 22 25 59" src="https://github.com/user-attachments/assets/4e7b250e-4600-4003-b074-90dab65e55be">
 
 ## Features
 
